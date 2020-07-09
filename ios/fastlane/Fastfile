@@ -1,0 +1,12 @@
+default_platform(:ios)
+
+platform :ios do
+
+  desc "Run detox e2e"
+  lane :detox do
+    Dir.chdir "../.."
+    sh("detox build -c ios")
+    sh("detox test -c ios")
+  end
+  
+end
